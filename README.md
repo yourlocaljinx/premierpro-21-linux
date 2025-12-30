@@ -8,7 +8,7 @@
 - All **read** and **write** rights on your home folder and the folder of installation
 - `git`
 - `wine` >=6.1 (Avoid 6.20 to 6.22)
-- `gdown` - required to download the Photoshop components (To install: `pip install gdown`)
+- `gdown` - required to download the Premier Pro components (To install: `pip install gdown`)
 - `tar`
 - `wget`
 - `curl`
