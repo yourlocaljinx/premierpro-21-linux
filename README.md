@@ -1,7 +1,7 @@
 # Adobe Premier Pro CC 2021 installer for Linux!
 
 ## DISCLAIMER:
-**Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
+**Please use this software only if you have an active Adobe Premier Pro subscription. I'm not responsible for any illegal use of this product.**
 
 ## Requirements
 - An internet connection
