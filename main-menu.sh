@@ -7,25 +7,21 @@ export WINEPREFIX="$PWD/Ps-prefix"
 ! [ -d logs ] && mkdir logs
 
 clear
-echo "${bold}-------------- Adobe Photoshop CC 2021 (v22)  installer main menu on Linux --------------${reset}"
+echo "${bold}-------------- Adobe Premier Pro CC 2021  installer main menu on Linux --------------${reset}"
 echo ""
 PS3="
 [Choose options 1-6 or 7 to exit]: "
-options=("Install Photoshop CC 2021 (v22)" "Uninstall Photoshop CC 2021 (v22)" "Install Adobe Camera Raw Plugin" "Install/Uninstall vdk3d proton" "Configure Photoshop wine prefix (winecfg)"  "Update desktop integration" "Exit")
+options=("Install Premier Pro CC 2021" "Uninstall Premier Pro CC 2021" "Install/Uninstall vdk3d proton" "Configure Premier Pro wine prefix (winecfg)"  "Update desktop integration" "Exit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Install Photoshop CC 2021 (v22)")
+        "Install Premier Pro CC 2021")
 			echo ""
             bash scripts/installer.sh | tee logs/installer.log
             ;;
-        "Uninstall Photoshop CC 2021 (v22)")
+        "Uninstall Premier Pro CC 2021")
             echo ""
 			bash scripts/uninstaller.sh | tee logs/uninstaller.log
-            ;;
-        "Install Adobe Camera Raw Plugin")
-            echo ""
-			bash scripts/camera_raw.sh | tee logs/camera_raw.log
             ;;
         "Install/Uninstall vdk3d proton")
             choice="u"
@@ -47,7 +43,7 @@ do
                 echo "Invalid choice: $choice"
             fi
             ;;
-		"Configure Photoshop wine prefix (winecfg)")
+		"Configure Premier Pro wine prefix (winecfg)")
 			echo ""
             echo "Starting winecfg..."
             echo ""
@@ -56,28 +52,29 @@ do
 			;;
 		"Update desktop integration")
             echo "[Desktop Entry]
-Name=Photoshop CC
+echo "[Desktop Entry]
+Name=Premier Pro CC
 Exec=bash -c '$PWD/scripts/launcher.sh'
 Type=Application
-Comment=Photoshop CC 2021
-Categories=Graphics;2DGraphics;RasterGraphics;Production;
-Icon=$PWD/images/photoshop.svg
-StartupWMClass=photoshop.exe
-MimeType=image/png;image/psd;" > ~/.local/share/applications/photoshop.desktop
+Comment=Premier Pro CC 2021
+Categories=Graphics;2DGraphics;VideoEditing;Production;
+Icon=$PWD/images/premierpro.svg
+StartupWMClass=premierpro.exe
+MimeType=image/png;image/psd;" > scripts/premierpro.desktop
 
             echo "#\!/bin/bash
-cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
-WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" > scripts/launcher.sh
+cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe\ Premier\ Pro\ 2021/"
+WINEPREFIX=\"$PWD/Ps-prefix\" wine premierpro.exe $1" > scripts/launcher.sh
 
             chmod u+x scripts/launcher.sh
-            chmod u+x ~/.local/share/applications/photoshop.desktop
+            chmod u+x ~/.local/share/applications/premierpro.desktop
 			echo ""
             echo "Desktop entry updated!"
             echo ""
 			;;
 		"Exit")
 			echo ""
-            echo "Exiting Photoshop Main Menu."
+            echo "Exiting Premier Pro Main Menu."
             break
             ;;
         *) echo "Invalid option: $REPLY";;

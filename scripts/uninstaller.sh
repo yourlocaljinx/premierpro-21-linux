@@ -2,14 +2,14 @@
 
 choice="0"
 echo ""
-read -p "Are you sure you want to uninstall Adobe Photoshop? (y/n): " choice
+read -p "Are you sure you want to uninstall Adobe Premier Pro? (y/n): " choice
 
 if [ "$choice" = "y" ]
 then
-    rm -rf Ps-prefix
-    rm -rf  ~/.local/share/applications/photoshop.desktop
+    rm -rf Pr-prefix
+    rm -rf  ~/.local/share/applications/premierpro.desktop
     echo ""
-    echo "Photoshop uninstalled!"
+    echo "Premier Pro uninstalled!"
     echo ""
 elif [ "$choice" = "n" ]
 then
@@ -18,7 +18,7 @@ then
     echo ""
 else
     echo ""
-    echo "Invalid input, exiting Adobe Photoshop uninstaller!"
+    echo "Invalid input, exiting Adobe Premier Pro uninstaller!"
     echo ""
 fi
 
